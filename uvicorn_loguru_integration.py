@@ -4,12 +4,15 @@ import logging
 from uvicorn.supervisors import Multiprocess, ChangeReload
 
 
+UVICORN_LOGGING_MODULES = ("uvicorn.error", "uvicorn.asgi", "uvicorn.access")
+
+
 def run_uvicorn_loguru(config: uvicorn.Config):
     """Same as uvicorn.run but injects loguru logging"""
     server = uvicorn.Server(config=config)
     setup_loguru_logging_intercept(
         level=logging.getLevelName(config.log_level.upper()),
-        modules=("uvicorn.error", "uvicorn.asgi", "uvicorn.access")
+        modules=UVICORN_LOGGING_MODULES
     )
     supervisor_type = None
     if config.should_reload:
