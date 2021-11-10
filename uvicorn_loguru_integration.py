@@ -7,9 +7,10 @@ from uvicorn.supervisors import Multiprocess, ChangeReload
 UVICORN_LOGGING_MODULES = ("uvicorn.error", "uvicorn.asgi", "uvicorn.access")
 
 
-def run_uvicorn_loguru(config: uvicorn.Config):
+def run_uvicorn_loguru(config: uvicorn.Config, force_exit=False):
     """Same as uvicorn.run but injects loguru logging"""
     server = uvicorn.Server(config=config)
+    server.force_exit = force_exit
     setup_loguru_logging_intercept(
         level=logging.getLevelName(config.log_level.upper()),
         modules=UVICORN_LOGGING_MODULES
