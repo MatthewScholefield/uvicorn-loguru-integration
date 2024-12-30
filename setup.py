@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='uvicorn-loguru-integration',
-    version='0.3.0',
+    version='0.3.1',
     description='Code to integrate uvicorn.run with Loguru logging',
     url='https://github.com/MatthewScholefield/uvicorn-loguru-integration',
     author='Matthew D. Scholefield',
