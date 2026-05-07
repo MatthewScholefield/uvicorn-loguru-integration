@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uvicorn-loguru-integration"
+version = "0.3.2"
+description = "Code to integrate uvicorn.run with Loguru logging"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+  { name = "Matthew D. Scholefield", email = "matthew331199@gmail.com" },
+]
+keywords = ["uvicorn", "loguru", "integration"]
+dependencies = [
+  "uvicorn",
+  "loguru-logging-intercept",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/MatthewScholefield/uvicorn-loguru-integration"
+
+[tool.setuptools]
+py-modules = ["uvicorn_loguru_integration"]

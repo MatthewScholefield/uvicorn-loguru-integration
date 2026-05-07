@@ -36,8 +36,10 @@ if __name__ == "__main__":
 
 ## Installation
 
-Install via `pip`:
+Install via `pip` or `uv`:
 
 ```bash
 pip3 install uvicorn-loguru-integration
+# or
+uv pip install uvicorn-loguru-integration
 ```
